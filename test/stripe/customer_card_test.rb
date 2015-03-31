@@ -1,12 +1,12 @@
 require File.expand_path('../../test_helper', __FILE__)
 
-module Stripe
+module KickstarterStripe
   class CustomerCardTest < Test::Unit::TestCase
     CUSTOMER_CARD_URL = '/v1/customers/test_customer/cards/test_card'
 
     def customer
       @mock.expects(:get).once.returns(test_response(test_customer))
-      Stripe::Customer.retrieve('test_customer')
+      KickstarterStripe::Customer.retrieve('test_customer')
     end
 
     should "customer cards should be listable" do
@@ -14,7 +14,7 @@ module Stripe
       @mock.expects(:get).once.returns(test_response(test_card_array(customer.id)))
       cards = c.cards.all.data
       assert cards.kind_of? Array
-      assert cards[0].kind_of? Stripe::Card
+      assert cards[0].kind_of? KickstarterStripe::Card
     end
 
     should "customer cards should have the correct url" do

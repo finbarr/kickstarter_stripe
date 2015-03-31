@@ -1,4 +1,4 @@
-module Stripe
+module KickstarterStripe
   module TestData
     def test_response(body, code=200)
       # When an exception is raised, restclient clobbers method_missing.  Hence we
@@ -318,7 +318,7 @@ module Stripe
     def test_recipient(params={})
       id = params[:id] || 'rp_test_recipient'
       {
-        :name => "Stripe User",
+        :name => "KickstarterStripe User",
         :type => "individual",
         :livemode => false,
         :object => "recipient",

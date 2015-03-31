@@ -1,26 +1,26 @@
 require File.expand_path('../../test_helper', __FILE__)
 
-module Stripe
+module KickstarterStripe
   class MetadataTest < Test::Unit::TestCase
     setup do
       @metadata_supported = {
         :charge => {
-          :new => Stripe::Charge.method(:new),
+          :new => KickstarterStripe::Charge.method(:new),
           :test => method(:test_charge),
           :url => "/v1/charges/#{test_charge()[:id]}"
         },
         :customer => {
-          :new => Stripe::Customer.method(:new),
+          :new => KickstarterStripe::Customer.method(:new),
           :test => method(:test_customer),
           :url => "/v1/customers/#{test_customer()[:id]}"
         },
         :recipient => {
-          :new => Stripe::Recipient.method(:new),
+          :new => KickstarterStripe::Recipient.method(:new),
           :test => method(:test_recipient),
           :url => "/v1/recipients/#{test_recipient()[:id]}"
         },
         :transfer => {
-          :new => Stripe::Transfer.method(:new),
+          :new => KickstarterStripe::Transfer.method(:new),
           :test => method(:test_transfer),
           :url => "/v1/transfers/#{test_transfer()[:id]}"
         }
@@ -78,7 +78,7 @@ module Stripe
           obj.metadata['uuid'] = '6735'
         end
         params = {:metadata => {'type' => 'summer', 'uuid' => '6735'}}
-        curl_args = Stripe.uri_encode(params)
+        curl_args = KickstarterStripe.uri_encode(params)
         check_metadata({:metadata => {'type' => 'christmas'}},
                        curl_args,
                        update_actions)

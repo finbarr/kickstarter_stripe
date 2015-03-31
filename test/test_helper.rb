@@ -1,4 +1,4 @@
-require 'stripe'
+require 'kickstarter_stripe'
 require 'test/unit'
 require 'mocha/setup'
 require 'stringio'
@@ -6,7 +6,7 @@ require 'shoulda'
 require File.expand_path('../test_data', __FILE__)
 
 # monkeypatch request methods
-module Stripe
+module KickstarterStripe
   @mock_rest_client = nil
 
   def self.mock_rest_client=(mock_client)
@@ -25,17 +25,17 @@ module Stripe
 end
 
 class Test::Unit::TestCase
-  include Stripe::TestData
+  include KickstarterStripe::TestData
   include Mocha
 
   setup do
     @mock = mock
-    Stripe.mock_rest_client = @mock
-    Stripe.api_key="foo"
+    KickstarterStripe.mock_rest_client = @mock
+    KickstarterStripe.api_key="foo"
   end
 
   teardown do
-    Stripe.mock_rest_client = nil
-    Stripe.api_key=nil
+    KickstarterStripe.mock_rest_client = nil
+    KickstarterStripe.api_key=nil
   end
 end

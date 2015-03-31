@@ -1,9 +1,9 @@
-= Stripe Ruby bindings {<img src="https://travis-ci.org/stripe/stripe-ruby.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/stripe/stripe-ruby] {<img src="https://gemnasium.com/stripe/stripe-ruby.png" alt="Dependency Status" />}[https://gemnasium.com/stripe/stripe-ruby]
+= KickstarterStripe Ruby bindings {<img src="https://travis-ci.org/stripe/stripe-ruby.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/stripe/stripe-ruby] {<img src="https://gemnasium.com/stripe/stripe-ruby.png" alt="Dependency Status" />}[https://gemnasium.com/stripe/stripe-ruby]
 
 == Installation
 
 You don't need this source code unless you want to modify the gem. If
-you just want to use the Stripe Ruby bindings, you should run:
+you just want to use the KickstarterStripe Ruby bindings, you should run:
 
   gem install --source https://code.stripe.com stripe
 

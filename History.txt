@@ -72,7 +72,7 @@
 === 1.10.1 2014-02-03
 
 * 1 bugfix:
-  * Fix marshaling of StripeObjects
+  * Fix marshaling of KickstarterStripeObjects
 
 === 1.10.0 2014-01-29
 
@@ -85,7 +85,7 @@
   * Allow #save to take opts (for :expand)
 
 * 1 bugfix
-  * Fix #try and #respond_to? on StripeObjects
+  * Fix #try and #respond_to? on KickstarterStripeObjects
 
 === 1.9.9 2013-12-02
 
@@ -124,7 +124,7 @@
 === 1.8.4 2013-07-11
 
 * 1 major enhancement
-  * Add support for new cards API (Stripe API version 2013-07-05)
+  * Add support for new cards API (KickstarterStripe API version 2013-07-05)
 
 === 1.8.3 2013-05-06
 
@@ -164,14 +164,14 @@
 === 1.7.10 2013-02-01
 
 * 1 major enhancement
-  * Add support for passing options when retrieving Stripe objects
-    e.g., Stripe::Charge.retrieve({id:"foo", expand:["customer"]})
-    Stripe::Charge("foo") is still supported as well
+  * Add support for passing options when retrieving KickstarterStripe objects
+    e.g., KickstarterStripe::Charge.retrieve({id:"foo", expand:["customer"]})
+    KickstarterStripe::Charge("foo") is still supported as well
 
 === 1.7.9 2013-01-15
 
 * 1 major enhancement
-  * Add support for setting a Stripe API version override.
+  * Add support for setting a KickstarterStripe API version override.
 
 === 1.7.8 2012-11-21
 
@@ -200,7 +200,7 @@
 
 * 1 bugfix
   * Fix bug introduced in 1.7.3 calling API methods that take no
-    arguments, like Stripe::Invoice#pay (github issue #42)
+    arguments, like KickstarterStripe::Invoice#pay (github issue #42)
 
 === 1.7.3 2012-09-14
 
@@ -228,12 +228,12 @@
   * Switch from vendored stripe-json to multi_json for all JSON
     parsing and rendering. This should not impact programmatic usage
     of the library, but may cause small rendering differences from,
-    e.g., StripeObject#inspect (github issue #22)
+    e.g., KickstarterStripeObject#inspect (github issue #22)
   * Add new delete_discount method to Customer objects
   * Add new Transfer API resource
 
 * 2 minor enhancements:
-  * Switch from HTTP Basic auth to Bearer auth (Note: Stripe will
+  * Switch from HTTP Basic auth to Bearer auth (Note: KickstarterStripe will
     support Basic auth for the indefinite future, but recommends
     Bearer auth when possible going forward)
   * Numerous test suite improvements
@@ -247,12 +247,12 @@
 === 1.6.2 2012-02-24
 
 * 1 bugfix:
-  * Correct argument handling in StripeObject#as_json
+  * Correct argument handling in KickstarterStripeObject#as_json
 
 === 1.6.1 2012-02-22
 
 * 1 bugfix:
-  * Fix StripeObject#inspect when ActiveSupport 3.0 is loaded
+  * Fix KickstarterStripeObject#inspect when ActiveSupport 3.0 is loaded
 
 === 1.6.0 2012-02-01
 
@@ -272,7 +272,7 @@
 === 1.3.4 2011-01-07
 
 * 1 major enhancement:
-  * Rename to Stripe
+  * Rename to KickstarterStripe
 
 === 1.2 2010-06-06
 
