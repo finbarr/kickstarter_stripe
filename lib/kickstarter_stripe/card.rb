@@ -4,6 +4,10 @@ module KickstarterStripe
     include KickstarterStripe::APIOperations::Delete
     include KickstarterStripe::APIOperations::List
 
+    def type
+      brand
+    end
+
     def url
       if respond_to?(:recipient)
         "#{Recipient.url}/#{CGI.escape(recipient)}/cards/#{CGI.escape(id)}"
