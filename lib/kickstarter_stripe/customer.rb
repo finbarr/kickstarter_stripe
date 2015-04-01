@@ -10,6 +10,10 @@ module KickstarterStripe
       InvoiceItem.create(params.merge(:customer => id), opts)
     end
 
+    def cards
+      sources
+    end
+
     def invoices
       Invoice.all({ :customer => id }, @api_key)
     end
